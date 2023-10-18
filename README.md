@@ -1,7 +1,7 @@
 # Soroban Online para practicar
 
 
-![Soroban Online](https://axelcotongutierrez.github.io/learningmathematicas/assets/images//posts/Contar3/jcontar3d.jpg)
+![Soroban Online](https://axelcotongutierrez.github.io/learningmathematicas/assets/images/pages/Soroban/Soroban.jpg)
 
 Dentro del blog: https://axelcotongutierrez.github.io/learningmathematicas/
 
