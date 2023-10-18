@@ -154,7 +154,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: auto; /* Barras de desplazamiento horizontales aparecerán cuando sea necesario */
     /* Agrega los estilos específicos para sorofield en dispositivos móviles aquí */
   }
 
