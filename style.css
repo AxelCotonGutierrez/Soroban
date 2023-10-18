@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito';
+}
+
+body {
+  max-height: 80%;
+  text-align: center;
+  color: #0c4fe1;
+}
+
+
+h1 {
+  color: rgb(10, 10, 10);
+  padding: 50px;
+  font-size: 40px;
+}
+
+.container {
+  background-color: #ddff62;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid #000;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 50px 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evitar desbordamiento horizontal en dispositivos móviles */
+}
+
+.container2 {
+  background-color: #f0f3e9;
+  max-width: 80%;
+  margin: auto;
+  border: 3px solid #000;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 50px 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evitar desbordamiento horizontal en dispositivos móviles */
+}
+
+#numOfDigits {
+  padding: 10px;
+  font-size: 20px;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+#numOfDigits option {
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+}
+
+.marcador {
+  background-color: #333; /* Color de fondo */
+  color: #fff; /* Color de fuente */
+  font-size: 24px; /* Tamaño de fuente */
+  padding: 5px 10px; /* Espacio dentro del cuadro */
+  border: 2px solid #fff; /* Borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+}
+
+
+#display {
+  background-color: white;
+  border: 2px solid black;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  color: blue;
+  margin-bottom: 10px;
+}
+
+.textosuperior {
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+label {
+    font-weight: bold;
+}
+
+
+#buttons-container {
+  margin-top: 10px;
+}
+
+.guess-button {
+  background-color: #4285f4;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+}
+
+.large-text {
+  font-size: 25px; /* Elige el tamaño de fuente que desees */
+}
+
+ul {
+  list-style-type: none;
+}
+
+#sorofield {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columnas */
+  justify-content: center;
+  align-items: center;
+}
+
+#sorofield .rod {
+  margin: 0;
+  padding: 0;
+  border: 0; /* Elimina bordes (si los hubiera) que puedan agregar espaciado */
+  vertical-align: middle; /* Alinea verticalmente las imágenes en caso de que haya espacio adicional */
+}
+
+#sorofield img {
+  margin-top: -3px;
+  margin-bottom: -4px;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .container,
+  .container2 {
+    max-width: 90%; /* Ancho completo en dispositivos móviles */
+  }
+
+  #sorofield {
+    max-width: 80%; /* Establece el ancho máximo al 80% del ancho de la pantalla */
+    margin: 0 auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Agrega los estilos específicos para sorofield en dispositivos móviles aquí */
+  }
+
+  .textosuperior {
+    font-size: 20px; /* Tamaño de texto superior en dispositivos móviles */
+  }
+  
+}

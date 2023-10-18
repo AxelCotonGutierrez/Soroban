@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="originalAuthor" content="中川雅央 (Universidad de Shiga), Masao NAKAGAWA">
+    <meta name="modifiedBy" content="Axel Cotón Gutiérrez">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Soroban</title>
+    <script language="JavaScript" src="./soroban/soropanel.js"></script>
+</head>
+
+<body onload="drawAbacus(1, 4, 1, 3);">
+    <header>
+        <a href="https://axelcotongutierrez.github.io/learningmathematicas/">
+            <img src="https://axelcotongutierrez.github.io/learningmathematicas/assets/images/top.jpg" alt="Blog Mathematica" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+        </a>
+    </header>
+    <h1>SOROBAN ONLINE</h1>
+    
+    <audio id="se_soroban" preload="auto">
+        <source src="./soroban/soroban.mp3" type="audio/mp3">
+    </audio>
+    <audio id="se_sorobanClear" preload="auto">
+        <source src="./soroban/sorobanClear.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="container2">
+        <form>
+            <div style="float: right;">
+                <input type="checkbox" id="soundFlag" checked="checked" onclick="soundToggle();"> Sonido
+            </div>
+        </form>
+        <span class="textosuperior">
+            <label for="numOfDigits">Número de Varillas:</label>
+            <select id="numOfDigits">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+            </select>
+        </span>
+        <button class="guess-button" onclick="updateAbacus()">Actualizar Soroban</button>
+    </div>
+    <hr>
+
+    <div class="container">
+        <div align="center">
+            <br>
+            <form>
+                <input class="guess-button"  type="button" name="RESET" value="RESET" style="font-size:12pt;" onclick="resetsoroban('', '');">
+                <input class="guess-button"  type="button" id="UNDO" name="UNDO" value="<< UNDO" style="font-size:12pt;" disabled="true" onclick="undosoroban('', '');">
+                <input class="guess-button" type="button" id="REDO" name="REDO" value="REDO >>" style="font-size:12pt;" disabled="true" onclick="redosoroban('', '');">
+
+            </form>
+            <br>
+            <br>
+        </div>
+        <div class="textosuperior" id="display"></div>
+        <form>
+            <div align="center" id="sorofield"></div>
+            <br>
+            <br>
+            <div id="equivalencia-panel">
+              <h2 class="textosuperior" align="center" style="color: black; font-weight: bold;">Sistema de Numeración Decimal</h2>
+
+                <ul class="textosuperior" align="center">
+                  <li ldata-value="1"><span class="large-text"><strong>A:</strong> Unidades</span></li>
+                  <li data-value="2"><span class="large-text"><strong>B:</strong> Decenas</span></li>
+                  <li data-value="3"><span class="large-text"><strong>C:</strong> Centenas</span></li>
+                  <li data-value="4"><span class="large-text"><strong>D:</strong> Unidades de millar</span></li>
+                  <li data-value="5"><span class="large-text"><strong>E:</strong> Decenas de millar</span></li>
+                  <li data-value="6"><span class="large-text"><strong>F:</strong> Centenas de millar</span></li>
+                  <li data-value="7"><span class="large-text"><strong>G:</strong> Unidades de millón</span></li>
+                  <li data-value="8"><span class="large-text"><strong>H:</strong> Decenas de millón</span></li>
+                  <li data-value="9"><span class="large-text"><strong>I:</strong> Centenas de millón</span></li>
+                  <li data-value="10"><span class="large-text"><strong>J:</strong> Unidades de millardo</span></li>
+                  <li data-value="11"><span class="large-text"><strong>K:</strong> Decenas de millardo</span></li>
+                  <li data-value="12"><span class="large-text"><strong>L:</strong> Centenas de millardo</span></li>
+                  <li data-value="13"><span class="large-text"><strong>M:</strong> Unidades de billón</span></li>
+                  <li data-value="14"><span class="large-text"><strong>N:</strong> Decenas de billón</span></li>
+                  <li data-value="15"><span class="large-text"><strong>O:</strong> Centenas de billón</span></li>
+                  <li data-value="16"><span class="large-text"><strong>P:</strong> Unidades de billardo</span></li>
+                  <li data-value="17"><span class="large-text"><strong>Q:</strong> Decenas de billardo</span></li>
+                  <li data-value="18"><span class="large-text"><strong>R:</strong> Centenas de billardo</span></li>
+                  <li data-value="19"><span class="large-text"><strong>S:</strong> Unidades de Trillón</span></li>
+              </ul>
+              
+              
+            </div>
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script>
+        // Script para poner las unidades del sistema de numeración decimal según el número de varillas que elijamos
+        const numOfDigitsSelect = document.getElementById("numOfDigits");
+        const equivalenciaPanel = document.getElementById("equivalencia-panel");
+
+        // Oculta todas las filas al principio
+        const filas = equivalenciaPanel.querySelectorAll("ul > li");
+        filas.forEach(function (fila, index) {
+            fila.style.display = "none";
+        });
+
+        // Muestra la primera fila al cargar la página
+        filas[0].style.display = "list-item";
+
+        numOfDigitsSelect.addEventListener("change", function () {
+            const selectedValue = parseInt(numOfDigitsSelect.value, 10);
+
+            // Obtén todas las filas de la lista
+            const filas = equivalenciaPanel.querySelectorAll("ul > li");
+
+            // Recorre todas las filas
+            filas.forEach(function (fila, index) {
+                if (index < selectedValue) {
+                    fila.style.display = "list-item"; // Muestra los elementos
+                } else {
+                    fila.style.display = "none"; // Oculta los elementos
+                }
+            });
+        });
+    </script>
+    <script>
+        // Para el marcador del valor del soroban
+        // Actualiza el número y aplica la clase CSS de marcador
+        function updateDisplayNumber(number) {
+            const displayNumber = document.getElementById("displayNumber");
+            displayNumber.textContent = number;
+        
+            // Agrega la clase CSS de marcador
+            displayNumber.classList.add("marcador");
+        }
+    </script>
+  
+</body>
+</html>
