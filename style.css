@@ -151,7 +151,7 @@ ul {
   }
 
   #sorofield {
-    max-width: 80%; /* Establece el ancho máximo al 80% del ancho de la pantalla */
+    max-width: 100%; /* Establece el ancho máximo al 80% del ancho de la pantalla */
     margin: 0 auto; 
     display: flex;
     justify-content: center;
