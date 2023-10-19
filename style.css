@@ -145,7 +145,7 @@ ul {
 @media (max-width: 768px) {
   .container,
   .container2 {
-    max-width: 100%; /* Ancho completo en dispositivos móviles */
+    max-width: 140%; /* Ancho completo en dispositivos móviles */
     overflow-x: auto; /* Barras de desplazamiento horizontales aparecerán cuando sea necesario */
     /* Agrega los estilos específicos para sorofield en dispositivos móviles aquí */
   }
