@@ -6,6 +6,7 @@
     <meta name="originalAuthor" content="中川雅央 (Universidad de Shiga), Masao NAKAGAWA">
     <meta name="modifiedBy" content="Axel Cotón Gutiérrez">
     <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="nav.css">
     <link rel="icon" href="icon.png" type="image/png">
     <title>Soroban</title>
     <script language="JavaScript" src="./soroban/soropanel.js"></script>
@@ -13,12 +14,33 @@
 
 <body onload="drawAbacus(1, 4, 1, 3);">
     <header>
-        <a href="https://axelcotongutierrez.github.io/learningmathematicas/">
-            <img src="https://axelcotongutierrez.github.io/learningmathematicas/assets/images/top.jpg" alt="Blog Mathematica" style="display: block; margin: 0 auto; width: 100%; height: auto;">
-        </a>
-    </header>
-    <h1>SOROBAN ONLINE</h1>
-    
+		<div class="menu">
+			<button class="menu-toggle">☰</button>
+			<ul><li><a href="https://axelcotongutierrez.github.io/learningmathematicas/">
+				<img src="cb.jpg"> 
+			</a></li>
+				<li><a href="/learningmathematicas/projects/Cursos/">Cursos y Materias</a></li>
+				<li><a href="/learningmathematicas/projects/Niveles/">Niveles</a></li>
+				<li><a href="/learningmathematicas/">Entradas</a></li>
+				<li><a href="/learningmathematicas/tags">Etiquetas</a></li>
+				<li><a href="/learningmathematicas/about">Blog</a></li>
+				<li><a href="#">Utilidades</a>
+					<ul>
+						<li><a href="/learningmathematicas/projects/Utilidades/Glosario.html">Glosario</a></li>
+						<li><a href="/learningmathematicas/projects/Utilidades/Programacion.html">Programación</a></li>
+						<li><a href="/learningmathematicas/projects/Utilidades/Soroban.html">Soroban</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<a href="https://axelcotongutierrez.github.io/learningmathematicas/">
+			<img src="https://axelcotongutierrez.github.io/learningmathematicas/assets/images//top.jpg" alt="Blog Mathematica" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+		  </a>
+		  <h1 style="text-align: center;">SOROBAN ONLINE</h1>
+		</header>
+		<br>
+
+        
     <audio id="se_soroban" preload="auto">
         <source src="./soroban/soroban.mp3" type="audio/mp3">
     </audio>
@@ -156,5 +178,12 @@
         }
     </script>
   
+
+  <footer class="footer">
+    <ul class="footer-links">
+        <li><a href="http://github.com/AxelCotonGutierrez"> <img src="githubinverseicon.jpg"></a></li>
+        <li><a href="https://www.youtube.com/@learningmathematicas"> <img src="youtubeinverseicon.jpg"></i></a></li>
+    </ul>
+</footer>
 </body>
 </html>

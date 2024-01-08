@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul {
+    list-style: none;
+    background-color: black; /* Color de fondo */
+    height: 40px;
+    display: flex;
+    padding-left: 0;
+    border-bottom: 1px solid #12421f; /* Color del borde */
+    margin-bottom: 0; /* Asegura que no haya margen en la parte inferior */
+}
+
+.menu ul li {
+    position: relative; /* Posicionamiento relativo para los submenús */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Espacio adicional a la derecha de cada elemento */
+}
+
+.menu ul li:last-child {
+    margin-right: 0; /* Elimina el margen en el último ítem */
+}
+
+.menu ul li a {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 40px;
+    color: white; /* Color del texto */
+    font-size: 1.2em;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0 10px; /* Padding dentro de los enlaces */
+    text-transform: uppercase;
+    height: 100%; /* Asegura que el enlace ocupe toda la altura del li */
+}
+
+.menu li ul {
+    display: none;
+    position: absolute; /* Posicionamiento absoluto para los submenús */
+    background-color: black; /* Fondo de los submenús */
+    width: auto; /* Ancho según el contenido */
+    left: 0; /* Alinear a la izquierda del ítem del menú */
+    top: 40px; /* Ubicar debajo del ítem del menú */
+    white-space: nowrap; /* Evitar el salto de línea */
+    z-index: 1000; /* Z-index para sobreponer sobre otros elementos */
+}
+
+.menu li ul li {
+    width: auto; /* Ancho según el contenido */
+    text-align: center;
+    background-color: black; /* Fondo de los submenús */
+}
+
+.menu li ul a {
+    line-height: 40px;
+    color: black; /* Color del texto en submenús */
+    padding: 10px 20px; /* Padding para enlaces de submenús */
+}
+
+.menu li ul li:hover {
+    background-color: #12421f; /* Color al pasar el ratón */
+}
+
+.menu li:hover > ul {
+    display: block; /* Mostrar submenús al pasar el ratón */
+}
+
+.menu li:hover a {
+    color: white; /* Color del texto al pasar el ratón */
+}
+
+.menu ul li a img {
+    max-height: 30px; /* Altura máxima de la imagen */
+    width: auto; /* Mantiene la proporción de la imagen */
+}
+
+header {
+    background-color: black;
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white; /* Color del botón hamburguesa */
+}
+
+.footer {
+    position: bottom;
+    margin-top: 0;
+    height: 5em;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    padding-bottom: 2em; 
+}
+
+.footer-links {
+    margin: 0;
+    padding: 1em;
+    padding-bottom: 2em;
+    padding-top: 1em;
+    list-style: none; /* Elimina los estilos predeterminados de la lista */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    justify-content: right; /* Alinea los elementos a la derecha */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.footer-links li {
+    display: inline-block; /* Muestra los elementos de la lista en línea */
+    margin-right: 10px; /* Añade espacio entre los elementos de la lista */
+}
+
+.footer img {
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    width: 50px; /* Ajusta esto para controlar el tamaño de la imagen */
+}
+
+@media (max-width: 768px) {
+    /* Estilos para la barra de navegación en modo móvil */
+    .menu ul {
+        display: none; /* El menú debe estar oculto inicialmente en móviles */
+        flex-direction: column; /* Los elementos se apilan verticalmente */
+        background-color: black; /* Fondo para el menú principal */
+    }
+
+    .menu ul li {
+        width: 100%; /* Hace que cada ítem ocupe el ancho completo */
+    }
+
+    .menu ul li a {
+        justify-content: flex-start; /* Alinea el contenido a la izquierda */
+        padding: 10px; /* Ajusta el padding para los enlaces */
+        font-size: 1em; /* Ajusta el tamaño de la fuente para móviles */
+        color: white; /* Color del texto */
+    }
+
+    .menu li ul {
+        position: static; /* Posicionamiento estándar para submenús */
+        display: none; /* Inicialmente oculto */
+        width: 100%; /* Ocupa el ancho completo */
+        padding-left: 20px; /* Añade un poco de padding a la izquierda */
+        background-color: transparent; /* Fondo transparente por defecto */
+    }
+
+    .menu li.active > ul,
+    .menu li:hover > ul {
+        display: block; /* Muestra el submenú en interacción */
+        background-color: black; /* Fondo negro solo cuando está activo */
+    }
+
+    .menu li ul li {
+        display: none; /* Los submenús están ocultos por defecto */
+    }
+
+    .menu li.active ul li,
+    .menu li:hover ul li {
+        display: block; /* Los submenús se muestran cuando el ítem padre está activo */
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón en dispositivos móviles */
+    }
+
+    .menu.active ul {
+        display: flex; /* Muestra la lista cuando el menú esté activo */
+    }
+
+    .menu ul li a img {
+        display: none; /* Opcionalmente, oculta la imagen en dispositivos móviles */
+    }
+}
+
+
