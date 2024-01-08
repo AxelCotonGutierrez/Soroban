@@ -104,21 +104,15 @@ label {
 }
 
 .guess-button {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #000;
-  font-size: 50px;
-  margin-bottom: 20px;
-  border-radius: 50%;
-  cursor: pointer;
   background-color: #4285f4;
-  color: white;
-  display: inline-flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
+  border: 2px solid #000;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
-
 .large-text {
   font-size: 25px; /* Elige el tamaño de fuente que desees */
 }
