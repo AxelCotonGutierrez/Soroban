@@ -142,16 +142,13 @@ ul {
 }
 
 @media (max-width: 768px) {
-  .container, .container2 {
+  .container,
+  .container2 {
     max-width: 80%; /* Ancho completo en dispositivos móviles */
-    flex-wrap: wrap; /* Permitir envolver las imágenes en múltiples líneas */
+    overflow-x: auto; /* Barras de desplazamiento horizontales aparecerán cuando sea necesario */
+    /* Agrega los estilos específicos para sorofield en dispositivos móviles aquí */
   }
-  .guess-button {
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    margin-bottom: 10px;
-}
+
   #sorofield {
     max-width: 100%; /* Establece el ancho máximo al 80% del ancho de la pantalla */
     margin: 0 auto; 
