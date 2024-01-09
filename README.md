@@ -7,7 +7,7 @@ Dentro del blog: https://axelcotongutierrez.github.io/learningmathematicas/
 
 Soroban online para practicar con distintos niveles de dificultad,
 
-Puedes probar el juego en esta url:
+Puedes probar la aplicación en esta url:
 
 https://axelcotongutierrez.github.io/Soroban/
 
